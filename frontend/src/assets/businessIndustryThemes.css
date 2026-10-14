@@ -1,0 +1,291 @@
+/* Unique per-industry hero atmospheres + title/panel shapes */
+
+.bl-shell {
+  --bl-muted: color-mix(in srgb, var(--bl-ink) 66%, transparent);
+  --bl-line: color-mix(in srgb, var(--bl-forest) 14%, transparent);
+}
+
+.bl-shell .bl-hero-stage {
+  background:
+    radial-gradient(ellipse 55% 55% at 85% 12%, color-mix(in srgb, var(--bl-gold) 40%, transparent), transparent 55%),
+    linear-gradient(150deg, var(--bl-forest-deep) 0%, var(--bl-forest) 52%, #0a0f0d 100%);
+}
+
+/* Title treatments */
+.bl-shell[data-title='italic'] .bl-hero-title,
+.bl-shell[data-title='italic'] .bl-section-title {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.bl-shell[data-title='upper'] .bl-hero-title,
+.bl-shell[data-title='upper'] .bl-section-title {
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+}
+
+.bl-shell[data-title='bold'] .bl-hero-title {
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.bl-shell[data-title='soft'] .bl-hero-title {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.bl-shell[data-title='serif'] .bl-hero-title {
+  font-weight: 600;
+}
+
+/* Hero panel shapes */
+.bl-shell[data-hero='blade'] .bl-hero-panel,
+.bl-shell[data-hero='seam'] .bl-hero-panel {
+  border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+  aspect-ratio: 1;
+  max-width: 400px;
+  margin-left: auto;
+}
+
+.bl-shell[data-hero='bloom'] .bl-hero-panel,
+.bl-shell[data-hero='care'] .bl-hero-panel,
+.bl-shell[data-hero='rx'] .bl-hero-panel {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  max-width: 380px;
+  margin-left: auto;
+}
+
+.bl-shell[data-hero='frame'] .bl-hero-panel,
+.bl-shell[data-hero='suite'] .bl-hero-panel {
+  border-radius: 4px;
+}
+
+.bl-shell[data-hero='editorial'] .bl-hero-panel,
+.bl-shell[data-hero='jewel'] .bl-hero-panel {
+  border-radius: 4px 48px 4px 48px;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%);
+}
+
+.bl-shell[data-hero='ember'] .bl-hero-panel,
+.bl-shell[data-hero='steam'] .bl-hero-panel,
+.bl-shell[data-hero='warm'] .bl-hero-panel {
+  border-radius: 32px 32px 8px 32px;
+  transform: rotate(-1.2deg);
+}
+
+.bl-shell[data-hero='steel'] .bl-hero-panel,
+.bl-shell[data-hero='timber'] .bl-hero-panel,
+.bl-shell[data-hero='pipe'] .bl-hero-panel,
+.bl-shell[data-hero='volt'] .bl-hero-panel,
+.bl-shell[data-hero='arena'] .bl-hero-panel {
+  border-radius: 6px;
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 94% 100%, 0 100%);
+  border: 2px solid color-mix(in srgb, var(--bl-gold) 45%, transparent);
+}
+
+.bl-shell[data-hero='shop'] .bl-hero-panel,
+.bl-shell[data-hero='fresh'] .bl-hero-panel,
+.bl-shell[data-hero='tech'] .bl-hero-panel,
+.bl-shell[data-hero='soft'] .bl-hero-panel,
+.bl-shell[data-hero='play'] .bl-hero-panel,
+.bl-shell[data-hero='garden'] .bl-hero-panel {
+  border-radius: 22px;
+}
+
+/* Distinct hero atmospheres per industry */
+.bl-shell[data-industry='barber'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(201, 162, 39, 0.4), transparent 42%),
+    linear-gradient(155deg, #14110f 0%, #2c2420 50%, #0c0a09 100%);
+}
+
+.bl-shell[data-industry='beauty'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(232, 160, 191, 0.45), transparent 45%),
+    linear-gradient(150deg, #2a1020 0%, #9d174d 48%, #1a0a12 100%);
+}
+
+.bl-shell[data-industry='tailor'] .bl-hero-stage {
+  background:
+    linear-gradient(145deg, #16132a 0%, #312e81 50%, #0f1020 100%);
+}
+
+.bl-shell[data-industry='photography'] .bl-hero-stage {
+  background:
+    linear-gradient(135deg, #000 0%, #262626 45%, #0a0a0a 100%);
+}
+
+.bl-shell[data-industry='clothing_boutique'] .bl-hero-stage {
+  background:
+    linear-gradient(115deg, rgba(20, 17, 15, 0.35), transparent 40%),
+    linear-gradient(165deg, #1c0a10 0%, #7a1f33 48%, #12080c 100%);
+}
+
+.bl-shell[data-industry='shoe_store'] .bl-hero-stage {
+  background:
+    linear-gradient(150deg, #1c1917 0%, #57534e 48%, #0c0a09 100%);
+}
+
+.bl-shell[data-industry='jewelry'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 70% 25%, rgba(251, 191, 36, 0.35), transparent 40%),
+    linear-gradient(155deg, #1e1035 0%, #4c1d95 50%, #12081f 100%);
+}
+
+.bl-shell[data-industry='florist'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 75% 20%, rgba(244, 114, 182, 0.35), transparent 42%),
+    linear-gradient(155deg, #052e16 0%, #15803d 48%, #022c14 100%);
+}
+
+.bl-shell[data-industry='restaurant'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(224, 164, 58, 0.45), transparent 38%),
+    linear-gradient(148deg, #2a1108 0%, #9a3412 48%, #1a0c08 100%);
+}
+
+.bl-shell[data-industry='cafe'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(214, 160, 90, 0.4), transparent 40%),
+    linear-gradient(150deg, #292016 0%, #78350f 50%, #1c1008 100%);
+}
+
+.bl-shell[data-industry='bakery'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(251, 191, 36, 0.5), transparent 40%),
+    linear-gradient(145deg, #3a1c0e 0%, #b45309 48%, #1a0e09 100%);
+}
+
+.bl-shell[data-industry='mechanic'] .bl-hero-stage {
+  background:
+    linear-gradient(135deg, #0c1014 0%, #1f2937 40%, #f59e0b22 70%, #111827 100%);
+}
+
+.bl-shell[data-industry='carpenter'] .bl-hero-stage {
+  background:
+    linear-gradient(145deg, #1c140c 0%, #7c4a1e 48%, #2a1808 100%);
+}
+
+.bl-shell[data-industry='plumber'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 75% 20%, rgba(56, 189, 248, 0.35), transparent 42%),
+    linear-gradient(150deg, #0c1a24 0%, #0369a1 50%, #082030 100%);
+}
+
+.bl-shell[data-industry='electrician'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 80% 15%, rgba(250, 204, 21, 0.4), transparent 40%),
+    linear-gradient(145deg, #1a0f2e 0%, #5b21b6 48%, #0f0820 100%);
+}
+
+.bl-shell[data-industry='construction'] .bl-hero-stage {
+  background:
+    linear-gradient(140deg, #1c1917 0%, #44403c 42%, #ea580c33 70%, #0c0a09 100%);
+}
+
+.bl-shell[data-industry='clinic'] .bl-hero-stage {
+  background:
+    radial-gradient(ellipse 48% 55% at 82% 18%, rgba(94, 234, 212, 0.35), transparent 55%),
+    linear-gradient(152deg, #063638 0%, #0d7377 50%, #042628 100%);
+}
+
+.bl-shell[data-industry='dental'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(147, 197, 253, 0.4), transparent 42%),
+    linear-gradient(150deg, #0f2744 0%, #1d4ed8 50%, #0a1628 100%);
+}
+
+.bl-shell[data-industry='pharmacy'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 75% 18%, rgba(134, 239, 172, 0.4), transparent 42%),
+    linear-gradient(150deg, #052e16 0%, #15803d 50%, #022c14 100%);
+}
+
+.bl-shell[data-industry='fitness'] .bl-hero-stage {
+  background:
+    linear-gradient(120deg, rgba(255, 77, 0, 0.35) 0%, transparent 42%),
+    linear-gradient(155deg, #050505 0%, #1a1a1a 48%, #0a0a0a 100%);
+}
+
+.bl-shell[data-industry='retail'] .bl-hero-stage {
+  background: linear-gradient(122deg, #082f49 0%, #0284c7 42%, #0b1220 100%);
+}
+
+.bl-shell[data-industry='grocery'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 75% 20%, rgba(250, 204, 21, 0.35), transparent 40%),
+    linear-gradient(150deg, #052e16 0%, #16a34a 48%, #14532d 100%);
+}
+
+.bl-shell[data-industry='electronics'] .bl-hero-stage {
+  background: linear-gradient(125deg, #0f172a 0%, #4f46e5 42%, #022c3a 100%);
+}
+
+.bl-shell[data-industry='furniture'] .bl-hero-stage {
+  background: linear-gradient(150deg, #2a1a10 0%, #8b5e34 48%, #1a1008 100%);
+}
+
+.bl-shell[data-industry='landscaping'] .bl-hero-stage {
+  background:
+    radial-gradient(ellipse 55% 50% at 75% 10%, rgba(163, 230, 53, 0.3), transparent 50%),
+    linear-gradient(158deg, #122010 0%, #3f6212 46%, #1a2e05 100%);
+}
+
+.bl-shell[data-industry='pet'] .bl-hero-stage {
+  background:
+    radial-gradient(ellipse 50% 45% at 75% 15%, rgba(253, 186, 116, 0.35), transparent 50%),
+    linear-gradient(155deg, #431407 0%, #c2410c 48%, #7c2d12 100%);
+}
+
+.bl-shell[data-industry='cleaning'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(103, 232, 249, 0.4), transparent 42%),
+    linear-gradient(150deg, #083344 0%, #0891b2 50%, #0e7490 100%);
+}
+
+.bl-shell[data-industry='hotel'] .bl-hero-stage {
+  background: linear-gradient(160deg, #1e1b4b 0%, #4338ca 48%, #312e81 100%);
+}
+
+.bl-shell[data-industry='consulting'] .bl-hero-stage {
+  background: linear-gradient(140deg, #0b1f2a 0%, #0f766e 48%, #0a1620 100%);
+}
+
+.bl-shell[data-industry='education'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 75% 20%, rgba(96, 165, 250, 0.4), transparent 42%),
+    linear-gradient(150deg, #1e3a8a 0%, #1d4ed8 50%, #172554 100%);
+}
+
+.bl-shell[data-industry='general'] .bl-hero-stage {
+  background: linear-gradient(145deg, #0f172a 0%, #334155 50%, #1e293b 100%);
+}
+
+/* Service / accent accents unique enough between siblings */
+.bl-shell[data-industry='pharmacy'] .bl-service-icon,
+.bl-shell[data-industry='clinic'] .bl-service-icon,
+.bl-shell[data-industry='dental'] .bl-service-icon {
+  border-radius: 50%;
+}
+
+.bl-shell[data-industry='fitness'] .bl-service-icon,
+.bl-shell[data-industry='mechanic'] .bl-service-icon,
+.bl-shell[data-industry='construction'] .bl-service-icon {
+  border-radius: 4px;
+}
+
+.bl-shell[data-industry='florist'] .bl-btn-primary,
+.bl-shell[data-industry='beauty'] .bl-btn-primary,
+.bl-shell[data-industry='jewelry'] .bl-btn-primary {
+  border-radius: 999px;
+}
+
+.bl-shell[data-industry='fitness'] .bl-btn-primary,
+.bl-shell[data-industry='mechanic'] .bl-btn-primary,
+.bl-shell[data-industry='electrician'] .bl-btn-primary {
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}

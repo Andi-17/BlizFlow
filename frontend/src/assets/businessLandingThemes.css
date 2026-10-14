@@ -1,0 +1,2588 @@
+/* Premium per-industry business page themes — distinct layout families */
+
+.bl-shell {
+  --bl-display: var(--bf-display, 'Fraunces', Georgia, serif);
+  --bl-body: var(--bf-font, 'Sora', system-ui, sans-serif);
+  --bl-accent-soft: color-mix(in srgb, var(--bl-gold) 28%, transparent);
+}
+
+.bl-shell .bl-hero-title,
+.bl-shell .bl-section-title,
+.bl-shell .bl-hero-wordmark-name,
+.bl-shell .bl-highlight-title,
+.bl-shell .bl-service-title,
+.bl-shell .bl-nav-brand-text,
+.bl-shell .bl-footer-brand strong,
+.bl-shell .bl-why-card h3 {
+  font-family: var(--bl-display);
+}
+
+.bl-shell .bl-hero-panel > *:not(.bl-hero-motif):not(.bl-hero-panel-glow) {
+  position: relative;
+  z-index: 1;
+}
+
+.bl-hero-motif {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1.35rem;
+  opacity: 0.16;
+}
+
+.bl-hero-motif span {
+  display: grid;
+  place-items: center;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+  color: #fff;
+  animation: blFloat 9s ease-in-out infinite alternate;
+}
+
+.bl-hero-motif span:nth-child(2) { animation-delay: 0.6s; }
+.bl-hero-motif span:nth-child(3) { animation-delay: 1.1s; }
+.bl-hero-motif span:nth-child(4) { animation-delay: 1.7s; }
+
+.bl-shell .bl-highlight-card,
+.bl-shell .bl-service-card,
+.bl-shell .bl-why-card,
+.bl-shell .bl-info-card {
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+}
+
+.bl-shell .bl-highlight-card:hover,
+.bl-shell .bl-service-card:hover,
+.bl-shell .bl-why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px color-mix(in srgb, var(--bl-forest) 18%, transparent);
+}
+
+.bl-shell .bl-btn-primary {
+  background: var(--bl-forest);
+  border-color: var(--bl-forest);
+}
+
+.bl-shell .bl-btn-primary:hover,
+.bl-shell .bl-btn-primary:focus-visible {
+  background: var(--bl-forest-deep);
+  border-color: var(--bl-forest-deep);
+}
+
+.bl-shell .bl-service-icon,
+.bl-shell .bl-trust-item i,
+.bl-shell .bl-about-aside i {
+  background: color-mix(in srgb, var(--bl-forest) 14%, transparent);
+  color: var(--bl-forest);
+}
+
+.bl-shell .bl-why-icon {
+  background: var(--bl-forest);
+}
+
+.bl-shell .bl-kicker {
+  color: var(--bl-forest);
+}
+
+/* ——— Atelier: salon / beauty / tailor / photo ——— */
+.bl-shell[data-layout='atelier'] {
+  --bl-ink: #1c1410;
+  --bl-muted: rgba(28, 20, 16, 0.64);
+  --bl-paper: #f7f1ea;
+  --bl-surface: #fffdf9;
+  --bl-forest: #5c3d2e;
+  --bl-forest-deep: #2f1d16;
+  --bl-gold: #c4a06a;
+  --bl-line: rgba(92, 61, 46, 0.12);
+  --bl-display: 'Playfair Display', 'Fraunces', Georgia, serif;
+  --bl-body: 'Outfit', 'Sora', system-ui, sans-serif;
+  --bl-nav-bg: rgba(247, 241, 234, 0.78);
+  --bl-nav-bg-scrolled: rgba(247, 241, 234, 0.96);
+  --bl-footer-bg: #efe6dc;
+  font-family: var(--bl-body);
+  background:
+    radial-gradient(ellipse 70% 50% at 100% -10%, rgba(196, 160, 106, 0.28), transparent 55%),
+    radial-gradient(ellipse 45% 40% at -5% 40%, rgba(92, 61, 46, 0.1), transparent 50%),
+    var(--bl-paper);
+}
+
+.bl-shell[data-layout='atelier'] .bl-hero-stage {
+  background:
+    radial-gradient(ellipse 50% 55% at 88% 12%, rgba(196, 160, 106, 0.4), transparent 52%),
+    linear-gradient(155deg, #1a100c 0%, #5c3d2e 46%, #2a1812 100%);
+}
+
+.bl-shell[data-layout='atelier'] .bl-hero-title {
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.035em;
+}
+
+.bl-shell[data-layout='atelier'] .bl-btn-primary {
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.bl-shell[data-layout='atelier'] .bl-hero-panel {
+  border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+  aspect-ratio: 1;
+  max-width: 420px;
+  margin-left: auto;
+}
+
+.bl-shell[data-layout='atelier'] .bl-service-card,
+.bl-shell[data-layout='atelier'] .bl-highlight-card {
+  border-radius: 1.6rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), #fffaf4),
+    var(--bl-surface);
+}
+
+.bl-shell[data-layout='atelier'] .bl-section-title {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ——— Boutique: fashion / jewelry / florist ——— */
+.bl-shell[data-layout='boutique'] {
+  --bl-ink: #14110f;
+  --bl-muted: rgba(20, 17, 15, 0.64);
+  --bl-paper: #f8f4ef;
+  --bl-surface: #fffcf9;
+  --bl-forest: #7a1f33;
+  --bl-forest-deep: #3d0f1a;
+  --bl-gold: #b8955a;
+  --bl-line: rgba(122, 31, 51, 0.12);
+  --bl-display: 'Bodoni Moda', 'Fraunces', Georgia, serif;
+  --bl-body: 'Outfit', 'Sora', system-ui, sans-serif;
+  --bl-nav-bg: rgba(248, 244, 239, 0.8);
+  --bl-nav-bg-scrolled: rgba(248, 244, 239, 0.96);
+  --bl-footer-bg: #efe7de;
+  font-family: var(--bl-body);
+  background:
+    linear-gradient(180deg, #f8f4ef 0%, #f3ebe3 100%);
+}
+
+.bl-shell[data-layout='boutique'] .bl-hero-stage {
+  background:
+    linear-gradient(115deg, rgba(20, 17, 15, 0.35) 0%, transparent 42%),
+    linear-gradient(165deg, #1c0a10 0%, #7a1f33 48%, #12080c 100%);
+}
+
+.bl-shell[data-layout='boutique'] .bl-hero-stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(255, 255, 255, 0.03) 80px,
+      rgba(255, 255, 255, 0.03) 81px
+    );
+  pointer-events: none;
+}
+
+.bl-shell[data-layout='boutique'] .bl-hero-title {
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.bl-shell[data-layout='boutique'] .bl-hero-panel {
+  border-radius: 4px 48px 4px 48px;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%);
+}
+
+.bl-shell[data-layout='boutique'] .bl-highlight-price {
+  font-family: var(--bl-display);
+  font-size: 1.45rem;
+  font-style: italic;
+}
+
+.bl-shell[data-layout='boutique'] .bl-service-card {
+  border-radius: 2px 28px;
+  border-top: 2px solid var(--bl-gold);
+}
+
+.bl-shell[data-layout='boutique'] .bl-trust-track {
+  border-radius: 4px;
+}
+
+/* ——— Kitchen: restaurant / cafe / bakery ——— */
+.bl-shell[data-layout='kitchen'] {
+  --bl-ink: #1a120c;
+  --bl-muted: rgba(26, 18, 12, 0.66);
+  --bl-paper: #f5ebe1;
+  --bl-surface: #fff9f2;
+  --bl-forest: #9a3412;
+  --bl-forest-deep: #4a1808;
+  --bl-gold: #e0a43a;
+  --bl-line: rgba(154, 52, 18, 0.14);
+  --bl-display: 'Libre Baskerville', Georgia, serif;
+  --bl-body: 'Nunito Sans', 'Sora', system-ui, sans-serif;
+  --bl-nav-bg: rgba(245, 235, 225, 0.82);
+  --bl-nav-bg-scrolled: rgba(245, 235, 225, 0.96);
+  --bl-footer-bg: #eadccf;
+  font-family: var(--bl-body);
+  background:
+    radial-gradient(ellipse 55% 45% at 95% 0%, rgba(224, 164, 58, 0.28), transparent 55%),
+    radial-gradient(ellipse 40% 35% at 0% 30%, rgba(154, 52, 18, 0.1), transparent 50%),
+    var(--bl-paper);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(224, 164, 58, 0.45), transparent 38%),
+    linear-gradient(148deg, #2a1108 0%, #9a3412 48%, #1a0c08 100%);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-hero-title {
+  font-optical-sizing: auto;
+  font-weight: 650;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-btn-primary {
+  border-radius: 16px;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-hero-panel {
+  border-radius: 32px 32px 8px 32px;
+  transform: rotate(-1.5deg);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-highlight-card {
+  border-left: 4px solid var(--bl-gold);
+  border-radius: 4px 18px 18px 4px;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-services-grid {
+  gap: 1.15rem;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-service-card {
+  border-radius: 20px;
+  background:
+    linear-gradient(160deg, #fffaf4, #fff),
+    var(--bl-surface);
+}
+
+/* ——— Workshop: trades ——— */
+.bl-shell[data-layout='workshop'] {
+  --bl-ink: #101418;
+  --bl-muted: rgba(16, 20, 24, 0.68);
+  --bl-paper: #eceff2;
+  --bl-surface: #ffffff;
+  --bl-forest: #24343c;
+  --bl-forest-deep: #10181c;
+  --bl-gold: #f0a202;
+  --bl-line: rgba(36, 52, 60, 0.14);
+  --bl-display: 'Space Grotesk', 'Sora', system-ui, sans-serif;
+  --bl-body: 'IBM Plex Sans', 'Sora', system-ui, sans-serif;
+  --bl-nav-bg: rgba(236, 239, 242, 0.88);
+  --bl-nav-bg-scrolled: rgba(236, 239, 242, 0.97);
+  --bl-footer-bg: #dde2e6;
+  font-family: var(--bl-body);
+  background:
+    repeating-linear-gradient(
+      -14deg,
+      transparent,
+      transparent 22px,
+      rgba(36, 52, 60, 0.035) 22px,
+      rgba(36, 52, 60, 0.035) 23px
+    ),
+    linear-gradient(180deg, #e8ebef, #eceff2);
+}
+
+.bl-shell[data-layout='workshop'] .bl-hero-stage {
+  background:
+    linear-gradient(135deg, #0c1014 0%, #24343c 40%, #f0a20222 70%, #12181c 100%);
+}
+
+.bl-shell[data-layout='workshop'] .bl-hero-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(240, 162, 2, 0.12) 50%, transparent 100%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.bl-shell[data-layout='workshop'] .bl-hero-title {
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7.5vw, 5rem);
+}
+
+.bl-shell[data-layout='workshop'] .bl-btn-primary {
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.bl-shell[data-layout='workshop'] .bl-hero-panel {
+  border-radius: 6px;
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 94% 100%, 0 100%);
+  border: 2px solid rgba(240, 162, 2, 0.35);
+}
+
+.bl-shell[data-layout='workshop'] .bl-service-card,
+.bl-shell[data-layout='workshop'] .bl-highlight-card {
+  border-radius: 6px;
+  border-top: 3px solid var(--bl-gold);
+}
+
+.bl-shell[data-layout='workshop'] .bl-trust-track {
+  border-radius: 6px;
+  border-left: 4px solid var(--bl-gold);
+}
+
+/* ——— Wellness: clinic / dental / pharmacy ——— */
+.bl-shell[data-layout='wellness'] {
+  --bl-ink: #0c2a2c;
+  --bl-muted: rgba(12, 42, 44, 0.64);
+  --bl-paper: #eef8f6;
+  --bl-surface: #ffffff;
+  --bl-forest: #0d7377;
+  --bl-forest-deep: #084c4f;
+  --bl-gold: #49c5b6;
+  --bl-line: rgba(13, 115, 119, 0.12);
+  --bl-display: 'Lora', Georgia, serif;
+  --bl-body: 'Figtree', 'Sora', system-ui, sans-serif;
+  --bl-nav-bg: rgba(238, 248, 246, 0.82);
+  --bl-nav-bg-scrolled: rgba(238, 248, 246, 0.96);
+  --bl-footer-bg: #dff0ed;
+  font-family: var(--bl-body);
+  background:
+    radial-gradient(ellipse 60% 45% at 100% 0%, rgba(73, 197, 182, 0.28), transparent 52%),
+    radial-gradient(ellipse 40% 35% at 0% 25%, rgba(13, 115, 119, 0.1), transparent 48%),
+    var(--bl-paper);
+}
+
+.bl-shell[data-layout='wellness'] .bl-hero-stage {
+  background:
+    radial-gradient(ellipse 48% 55% at 82% 18%, rgba(73, 197, 182, 0.35), transparent 55%),
+    linear-gradient(152deg, #063638 0%, #0d7377 50%, #042628 100%);
+}
+
+.bl-shell[data-layout='wellness'] .bl-hero-panel {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  max-width: 380px;
+  margin-left: auto;
+  min-height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 10px rgba(255, 255, 255, 0.06);
+}
+
+.bl-shell[data-layout='wellness'] .bl-btn-primary {
+  border-radius: 999px;
+}
+
+.bl-shell[data-layout='wellness'] .bl-service-card {
+  border-radius: 28px;
+  background: linear-gradient(180deg, #fff, #f4fbfa);
+}
+
+.bl-shell[data-layout='wellness'] .bl-why-card {
+  border-radius: 28px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bl-gold) 16%, #fff), var(--bl-surface));
+}
+
+/* ——— Arena: fitness / gym ——— */
+.bl-shell[data-layout='arena'] {
+  --bl-ink: #0a0a0a;
+  --bl-muted: rgba(10, 10, 10, 0.68);
+  --bl-paper: #f3f3f3;
+  --bl-surface: #ffffff;
+  --bl-forest: #111111;
+  --bl-forest-deep: #000000;
+  --bl-gold: #ff4d00;
+  --bl-line: rgba(0, 0, 0, 0.12);
+  --bl-display: 'Space Grotesk', 'Sora', system-ui, sans-serif;
+  --bl-body: 'Outfit', 'Sora', system-ui, sans-serif;
+  --bl-nav-bg: rgba(243, 243, 243, 0.88);
+  --bl-nav-bg-scrolled: rgba(243, 243, 243, 0.97);
+  --bl-footer-bg: #0a0a0a;
+  font-family: var(--bl-body);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 47px,
+      rgba(0, 0, 0, 0.03) 47px,
+      rgba(0, 0, 0, 0.03) 48px
+    ),
+    linear-gradient(180deg, #f7f7f7, #eeeeee);
+}
+
+.bl-shell[data-layout='arena'] .bl-hero-stage {
+  background:
+    linear-gradient(120deg, rgba(255, 77, 0, 0.35) 0%, transparent 42%),
+    linear-gradient(155deg, #050505 0%, #1a1a1a 48%, #0a0a0a 100%);
+}
+
+.bl-shell[data-layout='arena'] .bl-hero-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      transparent,
+      transparent 28px,
+      rgba(255, 77, 0, 0.07) 28px,
+      rgba(255, 77, 0, 0.07) 29px
+    );
+  pointer-events: none;
+}
+
+.bl-shell[data-layout='arena'] .bl-hero-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  font-size: clamp(2.7rem, 8vw, 5.4rem);
+}
+
+.bl-shell[data-layout='arena'] .bl-hero-panel {
+  border-radius: 8px;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%);
+  border: 2px solid rgba(255, 77, 0, 0.55);
+  background:
+    linear-gradient(160deg, rgba(255, 77, 0, 0.18), rgba(255, 255, 255, 0.04)),
+    rgba(0, 0, 0, 0.45);
+}
+
+.bl-shell[data-layout='arena'] .bl-btn-primary {
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.84rem;
+  font-weight: 700;
+  background: var(--bl-gold);
+  border-color: var(--bl-gold);
+  color: #000;
+}
+
+.bl-shell[data-layout='arena'] .bl-btn-primary:hover,
+.bl-shell[data-layout='arena'] .bl-btn-primary:focus-visible {
+  background: #ff6a26;
+  border-color: #ff6a26;
+  color: #000;
+}
+
+.bl-shell[data-layout='arena'] .bl-service-card {
+  border-radius: 6px;
+  border-left: 4px solid var(--bl-gold);
+  background: #fff;
+}
+
+/* ——— Store: retail / grocery / electronics / furniture ——— */
+.bl-shell[data-layout='store'] {
+  --bl-ink: #0b1220;
+  --bl-muted: rgba(11, 18, 32, 0.64);
+  --bl-paper: #f0f4f8;
+  --bl-surface: #ffffff;
+  --bl-forest: #0369a1;
+  --bl-forest-deep: #0c4a6e;
+  --bl-gold: #38bdf8;
+  --bl-line: rgba(3, 105, 161, 0.14);
+  --bl-display: 'Bricolage Grotesque', 'Sora', system-ui, sans-serif;
+  --bl-body: 'Outfit', 'Sora', system-ui, sans-serif;
+  --bl-nav-bg: rgba(240, 244, 248, 0.86);
+  --bl-nav-bg-scrolled: rgba(240, 244, 248, 0.97);
+  --bl-footer-bg: #e2e8f0;
+  font-family: var(--bl-body);
+  background:
+    radial-gradient(ellipse 50% 40% at 100% 0%, rgba(56, 189, 248, 0.18), transparent 50%),
+    var(--bl-paper);
+}
+
+.bl-shell[data-layout='store'] .bl-hero-stage {
+  background:
+    linear-gradient(122deg, #082f49 0%, #0284c7 42%, #0b1220 100%);
+}
+
+.bl-shell[data-layout='store'] .bl-hero-title {
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.bl-shell[data-layout='store'] .bl-hero-panel {
+  border-radius: 20px;
+  background:
+    linear-gradient(160deg, rgba(56, 189, 248, 0.18), rgba(255, 255, 255, 0.05)),
+    rgba(8, 20, 32, 0.35);
+}
+
+.bl-shell[data-layout='store'] .bl-highlights-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .bl-shell[data-layout='store'] .bl-highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.bl-shell[data-layout='store'] .bl-highlight-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 1rem;
+  align-items: center;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #fff, color-mix(in srgb, var(--bl-gold) 14%, #fff));
+  border-left: 4px solid var(--bl-forest);
+}
+
+.bl-shell[data-layout='store'] .bl-highlight-top {
+  display: contents;
+}
+
+.bl-shell[data-layout='store'] .bl-highlight-desc {
+  grid-column: 1 / -1;
+}
+
+.bl-shell[data-layout='store'] .bl-service-card {
+  border-radius: 16px;
+}
+
+/* ——— Outdoors: landscaping / pet / cleaning / hotel ——— */
+.bl-shell[data-layout='outdoors'] {
+  --bl-ink: #122418;
+  --bl-muted: rgba(18, 36, 24, 0.66);
+  --bl-paper: #eef6ef;
+  --bl-surface: #ffffff;
+  --bl-forest: #3f6212;
+  --bl-forest-deep: #1a2e05;
+  --bl-gold: #a3e635;
+  --bl-line: rgba(63, 98, 18, 0.14);
+  --bl-display: 'Newsreader', Georgia, serif;
+  --bl-body: 'Figtree', 'Sora', system-ui, sans-serif;
+  --bl-nav-bg: rgba(238, 246, 239, 0.82);
+  --bl-nav-bg-scrolled: rgba(238, 246, 239, 0.96);
+  --bl-footer-bg: #e0ecdf;
+  font-family: var(--bl-body);
+  background:
+    radial-gradient(ellipse 55% 42% at 100% 0%, rgba(163, 230, 53, 0.22), transparent 52%),
+    radial-gradient(ellipse 40% 30% at 0% 45%, rgba(63, 98, 18, 0.1), transparent 50%),
+    var(--bl-paper);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-hero-stage {
+  background:
+    radial-gradient(ellipse 55% 50% at 75% 10%, rgba(163, 230, 53, 0.3), transparent 50%),
+    linear-gradient(158deg, #122010 0%, #3f6212 46%, #1a2e05 100%);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-hero-panel {
+  border-radius: 28px 8px 28px 8px;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-location-panel,
+.bl-shell[data-layout='outdoors'] .bl-location-map {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-service-card {
+  border-radius: 22px;
+  border: 1px solid color-mix(in srgb, var(--bl-forest) 16%, transparent);
+}
+
+/* ——— Studio: consulting / education / general ——— */
+.bl-shell[data-layout='studio'] {
+  --bl-ink: #0f172a;
+  --bl-muted: rgba(15, 23, 42, 0.64);
+  --bl-paper: #f7f8fb;
+  --bl-surface: #ffffff;
+  --bl-forest: #0f766e;
+  --bl-forest-deep: #115e59;
+  --bl-gold: #2dd4bf;
+  --bl-line: rgba(15, 118, 110, 0.12);
+  --bl-display: 'Literata', Georgia, serif;
+  --bl-body: 'Manrope', 'Sora', system-ui, sans-serif;
+  --bl-nav-bg: rgba(247, 248, 251, 0.86);
+  --bl-nav-bg-scrolled: rgba(247, 248, 251, 0.97);
+  --bl-footer-bg: #eef1f5;
+  font-family: var(--bl-body);
+  background:
+    radial-gradient(ellipse 55% 40% at 100% 0%, rgba(45, 212, 191, 0.14), transparent 50%),
+    radial-gradient(ellipse 40% 30% at 0% 8%, rgba(15, 118, 110, 0.08), transparent 48%),
+    var(--bl-paper);
+}
+
+.bl-shell[data-layout='studio'] .bl-hero-stage {
+  background:
+    linear-gradient(140deg, #0b1f2a 0%, #0f766e 48%, #0a1620 100%);
+}
+
+.bl-shell[data-layout='studio'] .bl-hero-title {
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+.bl-shell[data-layout='studio'] .bl-hero-panel {
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(45, 212, 191, 0.16), rgba(255, 255, 255, 0.04)),
+    rgba(8, 20, 24, 0.4);
+}
+
+.bl-shell[data-layout='studio'] .bl-service-card {
+  border-radius: 18px;
+  border-bottom: 3px solid var(--bl-gold);
+}
+
+.bl-shell[data-layout='studio'] .bl-section-head {
+  max-width: 36rem;
+}
+
+/* Dark mode — keep layout character, deepen surfaces */
+html[data-theme='dark'] .bl-shell[data-layout='atelier'],
+html[data-theme='dark'] .bl-shell[data-layout='boutique'],
+html[data-theme='dark'] .bl-shell[data-layout='kitchen'],
+html[data-theme='dark'] .bl-shell[data-layout='workshop'],
+html[data-theme='dark'] .bl-shell[data-layout='wellness'],
+html[data-theme='dark'] .bl-shell[data-layout='arena'],
+html[data-theme='dark'] .bl-shell[data-layout='store'],
+html[data-theme='dark'] .bl-shell[data-layout='outdoors'],
+html[data-theme='dark'] .bl-shell[data-layout='studio'] {
+  --bl-ink: #eef3ef;
+  --bl-muted: rgba(238, 243, 239, 0.68);
+  --bl-paper: #0e1411;
+  --bl-surface: #171e1a;
+  --bl-line: rgba(238, 243, 239, 0.12);
+  --bl-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+  --bl-footer-bg: #0a100d;
+  --bl-nav-bg: rgba(14, 20, 17, 0.78);
+  --bl-nav-bg-scrolled: rgba(14, 20, 17, 0.94);
+  --bl-form-bg: #1a221e;
+  --bl-form-ink: #eef3ef;
+  --bl-form-muted: rgba(238, 243, 239, 0.68);
+  --bl-form-border: rgba(238, 243, 239, 0.16);
+}
+
+html[data-theme='dark'] .bl-shell[data-layout='store'] .bl-highlight-card {
+  background: linear-gradient(90deg, var(--bl-surface), color-mix(in srgb, var(--bl-forest) 22%, var(--bl-surface)));
+}
+
+html[data-theme='dark'] .bl-shell[data-layout='kitchen'] .bl-service-card,
+html[data-theme='dark'] .bl-shell[data-layout='atelier'] .bl-service-card,
+html[data-theme='dark'] .bl-shell[data-layout='wellness'] .bl-service-card {
+  background: var(--bl-surface);
+}
+
+/* =========================================================
+   FULL-PAGE SECTION THEMES — every block unique per layout
+   ========================================================= */
+
+.bl-shell .bl-section {
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+}
+
+.bl-shell .bl-section-title {
+  font-size: clamp(2.1rem, 4.2vw, 3.2rem);
+  letter-spacing: -0.03em;
+}
+
+.bl-shell .bl-about-text {
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  line-height: 1.7;
+}
+
+.bl-shell .bl-info-icon {
+  background: color-mix(in srgb, var(--bl-gold) 22%, transparent);
+  color: var(--bl-forest-deep);
+}
+
+.bl-shell .bl-contact-shell {
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--bl-forest) 8%, transparent), transparent 45%),
+    var(--bl-surface);
+}
+
+.bl-shell .bl-location-visual {
+  background:
+    radial-gradient(circle at 30% 40%, color-mix(in srgb, var(--bl-gold) 28%, transparent), transparent 45%),
+    radial-gradient(circle at 70% 60%, color-mix(in srgb, var(--bl-forest) 22%, transparent), transparent 50%),
+    linear-gradient(145deg, color-mix(in srgb, var(--bl-surface) 80%, var(--bl-forest)), var(--bl-paper));
+}
+
+.bl-shell .bl-location-pin {
+  background: var(--bl-forest);
+  box-shadow: 0 16px 36px color-mix(in srgb, var(--bl-forest) 35%, transparent);
+}
+
+/* ——— ATELIER sections ——— */
+.bl-shell[data-layout='atelier'] .bl-about {
+  position: relative;
+}
+
+.bl-shell[data-layout='atelier'] .bl-about-text {
+  font-family: var(--bl-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  max-width: 34rem;
+}
+
+.bl-shell[data-layout='atelier'] .bl-about-aside {
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem 0.85rem 0.85rem;
+  background: color-mix(in srgb, var(--bl-gold) 12%, #fff);
+  border-color: color-mix(in srgb, var(--bl-gold) 35%, transparent);
+}
+
+.bl-shell[data-layout='atelier'] .bl-services {
+  background:
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--bl-gold) 8%, transparent) 40%, transparent);
+}
+
+.bl-shell[data-layout='atelier'] .bl-services-grid {
+  gap: 1.25rem;
+}
+
+.bl-shell[data-layout='atelier'] .bl-service-card {
+  border: 0;
+  border-radius: 2rem;
+  padding: 1.75rem 1.5rem;
+  background:
+    linear-gradient(165deg, #fffefb, #f8efe4);
+  box-shadow: 0 18px 40px rgba(92, 61, 46, 0.08);
+  text-align: center;
+  justify-items: center;
+}
+
+.bl-shell[data-layout='atelier'] .bl-service-icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--bl-forest), var(--bl-forest-deep));
+  color: #fff;
+}
+
+.bl-shell[data-layout='atelier'] .bl-highlight-card {
+  border: 0;
+  border-radius: 1.75rem;
+  padding: 1.5rem;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(92, 61, 46, 0.07);
+}
+
+.bl-shell[data-layout='atelier'] .bl-highlight-price {
+  font-family: var(--bl-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--bl-forest);
+}
+
+.bl-shell[data-layout='atelier'] .bl-why {
+  background: linear-gradient(180deg, var(--bl-forest-deep), var(--bl-forest));
+  color: #f7f1ea;
+  width: 100%;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+
+.bl-shell[data-layout='atelier'] .bl-why .bl-section-head,
+.bl-shell[data-layout='atelier'] .bl-why-grid {
+  width: min(100% - 2rem, var(--bl-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bl-shell[data-layout='atelier'] .bl-why .bl-kicker,
+.bl-shell[data-layout='atelier'] .bl-why .bl-section-title,
+.bl-shell[data-layout='atelier'] .bl-why-card h3 {
+  color: #fff;
+}
+
+.bl-shell[data-layout='atelier'] .bl-why-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.bl-shell[data-layout='atelier'] .bl-why-card p {
+  color: rgba(247, 241, 234, 0.82);
+}
+
+.bl-shell[data-layout='atelier'] .bl-why-icon {
+  background: var(--bl-gold);
+  color: #2f1d16;
+  border-radius: 50%;
+}
+
+.bl-shell[data-layout='atelier'] .bl-info-card {
+  border-radius: 999px;
+  padding: 1rem 1.35rem;
+  background: #fff;
+  border-color: color-mix(in srgb, var(--bl-gold) 30%, transparent);
+}
+
+.bl-shell[data-layout='atelier'] .bl-location-panel {
+  border-radius: 2.5rem;
+  border: 0;
+  box-shadow: 0 24px 60px rgba(92, 61, 46, 0.1);
+}
+
+.bl-shell[data-layout='atelier'] .bl-contact-shell {
+  border-radius: 2.5rem;
+  border: 0;
+  box-shadow: 0 24px 60px rgba(92, 61, 46, 0.1);
+  background:
+    radial-gradient(ellipse 50% 60% at 0% 0%, rgba(196, 160, 106, 0.2), transparent 55%),
+    #fffdf9;
+}
+
+.bl-shell[data-layout='atelier'] .bl-footer {
+  background: linear-gradient(180deg, #efe6dc, #e8dccf);
+}
+
+/* ——— BOUTIQUE sections ——— */
+.bl-shell[data-layout='boutique'] .bl-section-head {
+  border-left: 3px solid var(--bl-gold);
+  padding-left: 1.1rem;
+}
+
+.bl-shell[data-layout='boutique'] .bl-section-title {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.bl-shell[data-layout='boutique'] .bl-about-body {
+  padding: 2rem 0;
+  border-top: 1px solid var(--bl-line);
+  border-bottom: 1px solid var(--bl-line);
+}
+
+.bl-shell[data-layout='boutique'] .bl-about-text {
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  max-width: 28rem;
+}
+
+.bl-shell[data-layout='boutique'] .bl-about-aside {
+  border-radius: 2px;
+  background: var(--bl-forest);
+  color: #fff;
+  border: 0;
+}
+
+.bl-shell[data-layout='boutique'] .bl-about-aside small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bl-shell[data-layout='boutique'] .bl-about-aside i {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 2px;
+}
+
+.bl-shell[data-layout='boutique'] .bl-services-grid {
+  gap: 0;
+  border-top: 1px solid var(--bl-line);
+}
+
+.bl-shell[data-layout='boutique'] .bl-service-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border: 0;
+  border-bottom: 1px solid var(--bl-line);
+  border-radius: 0;
+  background: transparent;
+  padding: 1.5rem 0.25rem;
+  box-shadow: none;
+}
+
+.bl-shell[data-layout='boutique'] .bl-service-card:hover {
+  transform: translateX(8px);
+  box-shadow: none;
+  background: color-mix(in srgb, var(--bl-gold) 8%, transparent);
+}
+
+.bl-shell[data-layout='boutique'] .bl-service-icon {
+  border-radius: 2px;
+  background: var(--bl-forest);
+  color: #fff;
+}
+
+.bl-shell[data-layout='boutique'] .bl-highlights-grid {
+  gap: 1.25rem;
+}
+
+.bl-shell[data-layout='boutique'] .bl-highlight-card {
+  border-radius: 2px 28px 2px 28px;
+  border: 1px solid var(--bl-line);
+  background:
+    linear-gradient(135deg, #fff, color-mix(in srgb, var(--bl-gold) 10%, #fff));
+  padding: 1.6rem;
+}
+
+.bl-shell[data-layout='boutique'] .bl-why-grid {
+  gap: 0;
+}
+
+.bl-shell[data-layout='boutique'] .bl-why-card {
+  border: 0;
+  border-top: 1px solid var(--bl-line);
+  border-radius: 0;
+  background: transparent;
+  padding: 1.75rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1.25rem;
+}
+
+.bl-shell[data-layout='boutique'] .bl-why-icon {
+  grid-row: span 2;
+  border-radius: 2px;
+  background: var(--bl-forest);
+}
+
+.bl-shell[data-layout='boutique'] .bl-info-grid {
+  gap: 0;
+  border: 1px solid var(--bl-line);
+}
+
+.bl-shell[data-layout='boutique'] .bl-info-card {
+  border: 0;
+  border-bottom: 1px solid var(--bl-line);
+  border-radius: 0;
+  background: #fff;
+}
+
+.bl-shell[data-layout='boutique'] .bl-info-card:last-child {
+  border-bottom: 0;
+}
+
+.bl-shell[data-layout='boutique'] .bl-location-panel {
+  border-radius: 2px;
+  border: 1px solid var(--bl-line);
+}
+
+.bl-shell[data-layout='boutique'] .bl-location-copy {
+  background: var(--bl-forest);
+  color: #fff;
+}
+
+.bl-shell[data-layout='boutique'] .bl-location-copy .bl-kicker,
+.bl-shell[data-layout='boutique'] .bl-location-copy .bl-section-title {
+  color: #fff;
+}
+
+.bl-shell[data-layout='boutique'] .bl-location-address {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bl-shell[data-layout='boutique'] .bl-location-copy .bl-btn-primary {
+  background: var(--bl-gold);
+  border-color: var(--bl-gold);
+  color: #1c0a10;
+}
+
+.bl-shell[data-layout='boutique'] .bl-contact-shell {
+  border-radius: 2px;
+  border: 1px solid var(--bl-line);
+  background: #fff;
+}
+
+.bl-shell[data-layout='boutique'] .bl-footer {
+  border-top: 3px solid var(--bl-forest);
+}
+
+/* ——— KITCHEN sections ——— */
+.bl-shell[data-layout='kitchen'] .bl-about {
+  background:
+    radial-gradient(ellipse 40% 50% at 100% 50%, rgba(224, 164, 58, 0.15), transparent 60%);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-about-text {
+  font-family: var(--bl-display);
+  font-weight: 550;
+  max-width: 36rem;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-about-aside {
+  border-radius: 18px;
+  border-left: 4px solid var(--bl-gold);
+  background: #fff9f2;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-services {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background: linear-gradient(180deg, #2a1108, #9a3412 55%, #4a1808);
+  color: #fff9f2;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-services .bl-section-head,
+.bl-shell[data-layout='kitchen'] .bl-services-grid {
+  width: min(100% - 2rem, var(--bl-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-services .bl-kicker {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-services .bl-section-title,
+.bl-shell[data-layout='kitchen'] .bl-services .bl-section-lede,
+.bl-shell[data-layout='kitchen'] .bl-services .bl-service-title {
+  color: #fff9f2;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-services .bl-section-lede {
+  opacity: 0.82;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-service-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  backdrop-filter: blur(6px);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-service-icon {
+  background: var(--bl-gold);
+  color: #2a1108;
+  border-radius: 14px;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-highlight-card {
+  border-radius: 4px 22px 22px 4px;
+  border: 0;
+  border-left: 5px solid var(--bl-gold);
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(154, 52, 18, 0.08);
+  padding: 1.5rem 1.4rem;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-highlight-price {
+  font-family: var(--bl-display);
+  font-size: 1.5rem;
+  color: var(--bl-forest);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-why-card {
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fff9f2, #fff);
+  border: 1px solid color-mix(in srgb, var(--bl-gold) 35%, transparent);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-why-icon {
+  border-radius: 14px;
+  background: linear-gradient(145deg, var(--bl-forest), var(--bl-forest-deep));
+}
+
+.bl-shell[data-layout='kitchen'] .bl-info-card {
+  border-radius: 18px;
+  background: #fff9f2;
+  border-color: color-mix(in srgb, var(--bl-gold) 30%, transparent);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-location-panel {
+  border-radius: 28px;
+  overflow: hidden;
+  border: 0;
+  box-shadow: 0 24px 50px rgba(154, 52, 18, 0.12);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-contact-shell {
+  border-radius: 28px;
+  border: 0;
+  background:
+    radial-gradient(ellipse 40% 50% at 100% 0%, rgba(224, 164, 58, 0.2), transparent 55%),
+    #fff9f2;
+  box-shadow: 0 24px 50px rgba(154, 52, 18, 0.1);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-footer {
+  background: #2a1108;
+  color: #f5ebe1;
+  border-top: 0;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-footer-brand strong,
+.bl-shell[data-layout='kitchen'] .bl-footer-link,
+.bl-shell[data-layout='kitchen'] .bl-footer-contact a,
+.bl-shell[data-layout='kitchen'] .bl-footer-bottom,
+.bl-shell[data-layout='kitchen'] .bl-footer-powered {
+  color: #f5ebe1;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-footer-brand span {
+  color: rgba(245, 235, 225, 0.7);
+}
+
+/* ——— WORKSHOP sections ——— */
+.bl-shell[data-layout='workshop'] .bl-kicker {
+  letter-spacing: 0.14em;
+  font-weight: 700;
+}
+
+.bl-shell[data-layout='workshop'] .bl-section-title {
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.bl-shell[data-layout='workshop'] .bl-about-text {
+  font-weight: 500;
+  max-width: 38rem;
+  border-left: 4px solid var(--bl-gold);
+  padding-left: 1.25rem;
+}
+
+.bl-shell[data-layout='workshop'] .bl-about-aside {
+  border-radius: 4px;
+  background: var(--bl-forest);
+  color: #fff;
+  border: 0;
+}
+
+.bl-shell[data-layout='workshop'] .bl-about-aside small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bl-shell[data-layout='workshop'] .bl-about-aside i {
+  background: var(--bl-gold);
+  color: #101418;
+  border-radius: 4px;
+}
+
+.bl-shell[data-layout='workshop'] .bl-services-grid {
+  gap: 0.85rem;
+}
+
+.bl-shell[data-layout='workshop'] .bl-service-card {
+  border-radius: 4px;
+  border: 1px solid var(--bl-line);
+  border-left: 4px solid var(--bl-gold);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+}
+
+.bl-shell[data-layout='workshop'] .bl-service-icon {
+  border-radius: 4px;
+  background: var(--bl-forest);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.bl-shell[data-layout='workshop'] .bl-highlight-card {
+  border-radius: 4px;
+  border: 2px solid var(--bl-forest);
+  border-top: 4px solid var(--bl-gold);
+  background: #fff;
+}
+
+.bl-shell[data-layout='workshop'] .bl-why {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background:
+    repeating-linear-gradient(
+      -14deg,
+      transparent,
+      transparent 18px,
+      rgba(240, 162, 2, 0.06) 18px,
+      rgba(240, 162, 2, 0.06) 19px
+    ),
+    #24343c;
+  color: #fff;
+}
+
+.bl-shell[data-layout='workshop'] .bl-why .bl-section-head,
+.bl-shell[data-layout='workshop'] .bl-why-grid {
+  width: min(100% - 2rem, var(--bl-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bl-shell[data-layout='workshop'] .bl-why .bl-kicker {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='workshop'] .bl-why .bl-section-title,
+.bl-shell[data-layout='workshop'] .bl-why-card h3 {
+  color: #fff;
+}
+
+.bl-shell[data-layout='workshop'] .bl-why-card {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.bl-shell[data-layout='workshop'] .bl-why-card p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bl-shell[data-layout='workshop'] .bl-why-icon {
+  border-radius: 4px;
+  background: var(--bl-gold);
+  color: #101418;
+}
+
+.bl-shell[data-layout='workshop'] .bl-info-card {
+  border-radius: 4px;
+  border-left: 3px solid var(--bl-gold);
+  background: #fff;
+}
+
+.bl-shell[data-layout='workshop'] .bl-location-panel {
+  border-radius: 4px;
+  border: 2px solid var(--bl-forest);
+}
+
+.bl-shell[data-layout='workshop'] .bl-location-copy {
+  background: #101418;
+  color: #fff;
+}
+
+.bl-shell[data-layout='workshop'] .bl-location-copy .bl-kicker {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='workshop'] .bl-location-copy .bl-section-title {
+  color: #fff;
+}
+
+.bl-shell[data-layout='workshop'] .bl-location-address {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bl-shell[data-layout='workshop'] .bl-contact-shell {
+  border-radius: 4px;
+  border: 2px solid var(--bl-forest);
+  border-top: 4px solid var(--bl-gold);
+  background: #fff;
+}
+
+.bl-shell[data-layout='workshop'] .bl-footer {
+  background: #101418;
+  color: #eceff2;
+  border-top: 4px solid var(--bl-gold);
+}
+
+.bl-shell[data-layout='workshop'] .bl-footer-brand strong,
+.bl-shell[data-layout='workshop'] .bl-footer-link,
+.bl-shell[data-layout='workshop'] .bl-footer-contact a,
+.bl-shell[data-layout='workshop'] .bl-footer-bottom,
+.bl-shell[data-layout='workshop'] .bl-footer-powered {
+  color: #eceff2;
+}
+
+.bl-shell[data-layout='workshop'] .bl-footer-brand span {
+  color: rgba(236, 239, 242, 0.65);
+}
+
+/* ——— WELLNESS sections ——— */
+.bl-shell[data-layout='wellness'] .bl-section-title {
+  font-weight: 500;
+}
+
+.bl-shell[data-layout='wellness'] .bl-about-body {
+  background: #fff;
+  border-radius: 2.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: 0 20px 50px rgba(13, 115, 119, 0.08);
+  border: 1px solid color-mix(in srgb, var(--bl-gold) 25%, transparent);
+}
+
+.bl-shell[data-layout='wellness'] .bl-about-aside {
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bl-gold) 18%, #fff);
+  border: 0;
+}
+
+.bl-shell[data-layout='wellness'] .bl-service-card {
+  border: 0;
+  border-radius: 2rem;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(13, 115, 119, 0.07);
+  text-align: center;
+  justify-items: center;
+  padding: 2rem 1.5rem;
+}
+
+.bl-shell[data-layout='wellness'] .bl-service-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--bl-gold), var(--bl-forest));
+  color: #fff;
+}
+
+.bl-shell[data-layout='wellness'] .bl-highlight-card {
+  border: 0;
+  border-radius: 2rem;
+  background: linear-gradient(180deg, #fff, #f0faf8);
+  box-shadow: 0 14px 36px rgba(13, 115, 119, 0.07);
+  padding: 1.6rem;
+}
+
+.bl-shell[data-layout='wellness'] .bl-why-grid {
+  gap: 1.25rem;
+}
+
+.bl-shell[data-layout='wellness'] .bl-why-card {
+  border: 0;
+  border-radius: 2rem;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(13, 115, 119, 0.07);
+  text-align: center;
+}
+
+.bl-shell[data-layout='wellness'] .bl-why-icon {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+  background: linear-gradient(145deg, var(--bl-forest), var(--bl-forest-deep));
+}
+
+.bl-shell[data-layout='wellness'] .bl-info-card {
+  border-radius: 1.5rem;
+  border: 0;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(13, 115, 119, 0.06);
+}
+
+.bl-shell[data-layout='wellness'] .bl-info-icon {
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bl-gold) 30%, #fff);
+  color: var(--bl-forest);
+}
+
+.bl-shell[data-layout='wellness'] .bl-location-panel {
+  border: 0;
+  border-radius: 2.5rem;
+  box-shadow: 0 24px 60px rgba(13, 115, 119, 0.1);
+  overflow: hidden;
+}
+
+.bl-shell[data-layout='wellness'] .bl-contact-shell {
+  border: 0;
+  border-radius: 2.5rem;
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(13, 115, 119, 0.1);
+}
+
+.bl-shell[data-layout='wellness'] .bl-footer {
+  background: linear-gradient(180deg, #dff0ed, #cfe8e4);
+}
+
+/* ——— ARENA sections (fitness) ——— */
+.bl-shell[data-layout='arena'] .bl-kicker {
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='arena'] .bl-section-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.bl-shell[data-layout='arena'] .bl-about-text {
+  font-weight: 600;
+  max-width: 36rem;
+  border-left: 4px solid var(--bl-gold);
+  padding-left: 1.2rem;
+  text-transform: none;
+}
+
+.bl-shell[data-layout='arena'] .bl-about-aside {
+  border-radius: 4px;
+  background: #111;
+  color: #fff;
+  border: 0;
+}
+
+.bl-shell[data-layout='arena'] .bl-about-aside small {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.bl-shell[data-layout='arena'] .bl-about-aside i {
+  background: var(--bl-gold);
+  color: #000;
+  border-radius: 4px;
+}
+
+.bl-shell[data-layout='arena'] .bl-services {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.bl-shell[data-layout='arena'] .bl-services .bl-section-head,
+.bl-shell[data-layout='arena'] .bl-services-grid {
+  width: min(100% - 2rem, var(--bl-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bl-shell[data-layout='arena'] .bl-services .bl-kicker {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='arena'] .bl-services .bl-section-title,
+.bl-shell[data-layout='arena'] .bl-services .bl-section-lede,
+.bl-shell[data-layout='arena'] .bl-services .bl-service-title {
+  color: #fff;
+}
+
+.bl-shell[data-layout='arena'] .bl-services .bl-section-lede {
+  opacity: 0.75;
+}
+
+.bl-shell[data-layout='arena'] .bl-service-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 77, 0, 0.28);
+  border-left: 4px solid var(--bl-gold);
+  border-radius: 6px;
+}
+
+.bl-shell[data-layout='arena'] .bl-service-icon {
+  border-radius: 4px;
+  background: var(--bl-gold);
+  color: #000;
+}
+
+.bl-shell[data-layout='arena'] .bl-highlight-card {
+  border-radius: 6px;
+  border: 2px solid #111;
+  border-top: 4px solid var(--bl-gold);
+  background: #fff;
+}
+
+.bl-shell[data-layout='arena'] .bl-highlight-price {
+  color: var(--bl-gold);
+  font-weight: 800;
+}
+
+.bl-shell[data-layout='arena'] .bl-why-card {
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  border: 1px solid rgba(255, 77, 0, 0.3);
+}
+
+.bl-shell[data-layout='arena'] .bl-why-card h3 {
+  color: #fff;
+}
+
+.bl-shell[data-layout='arena'] .bl-why-card p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.bl-shell[data-layout='arena'] .bl-why-icon {
+  border-radius: 4px;
+  background: var(--bl-gold);
+  color: #000;
+}
+
+.bl-shell[data-layout='arena'] .bl-info-card {
+  border-radius: 6px;
+  border-left: 3px solid var(--bl-gold);
+  background: #fff;
+}
+
+.bl-shell[data-layout='arena'] .bl-location-panel {
+  border-radius: 6px;
+  border: 2px solid #111;
+  overflow: hidden;
+}
+
+.bl-shell[data-layout='arena'] .bl-location-copy {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.bl-shell[data-layout='arena'] .bl-location-copy .bl-kicker {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='arena'] .bl-location-copy .bl-section-title {
+  color: #fff;
+}
+
+.bl-shell[data-layout='arena'] .bl-location-address {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bl-shell[data-layout='arena'] .bl-contact-shell {
+  border-radius: 6px;
+  border: 2px solid #111;
+  border-top: 4px solid var(--bl-gold);
+  background: #fff;
+}
+
+.bl-shell[data-layout='arena'] .bl-footer {
+  background: #000;
+  color: #f3f3f3;
+  border-top: 4px solid var(--bl-gold);
+}
+
+.bl-shell[data-layout='arena'] .bl-footer-brand strong,
+.bl-shell[data-layout='arena'] .bl-footer-link,
+.bl-shell[data-layout='arena'] .bl-footer-contact a,
+.bl-shell[data-layout='arena'] .bl-footer-bottom,
+.bl-shell[data-layout='arena'] .bl-footer-powered {
+  color: #f3f3f3;
+}
+
+.bl-shell[data-layout='arena'] .bl-footer-brand span {
+  color: rgba(243, 243, 243, 0.65);
+}
+
+/* ——— STORE sections ——— */
+.bl-shell[data-layout='store'] .bl-about-text {
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+}
+
+.bl-shell[data-layout='store'] .bl-about-aside {
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--bl-forest), var(--bl-forest-deep));
+  color: #fff;
+  border: 0;
+}
+
+.bl-shell[data-layout='store'] .bl-about-aside small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bl-shell[data-layout='store'] .bl-about-aside i {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.bl-shell[data-layout='store'] .bl-services {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background: #0b1220;
+  color: #fff;
+}
+
+.bl-shell[data-layout='store'] .bl-services .bl-section-head,
+.bl-shell[data-layout='store'] .bl-services-grid {
+  width: min(100% - 2rem, var(--bl-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bl-shell[data-layout='store'] .bl-services .bl-kicker {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='store'] .bl-services .bl-section-title,
+.bl-shell[data-layout='store'] .bl-services .bl-section-lede,
+.bl-shell[data-layout='store'] .bl-services .bl-service-title {
+  color: #fff;
+}
+
+.bl-shell[data-layout='store'] .bl-services .bl-section-lede {
+  opacity: 0.75;
+}
+
+.bl-shell[data-layout='store'] .bl-service-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 16px;
+}
+
+.bl-shell[data-layout='store'] .bl-service-icon {
+  background: rgba(56, 189, 248, 0.18);
+  color: var(--bl-gold);
+  border-radius: 12px;
+}
+
+.bl-shell[data-layout='store'] .bl-highlight-card {
+  padding: 1.35rem 1.4rem;
+  box-shadow: 0 12px 32px rgba(3, 105, 161, 0.08);
+}
+
+.bl-shell[data-layout='store'] .bl-highlight-price {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--bl-forest);
+}
+
+.bl-shell[data-layout='store'] .bl-why-card {
+  border-radius: 16px;
+  border-left: 4px solid var(--bl-forest);
+  background: #fff;
+}
+
+.bl-shell[data-layout='store'] .bl-why-icon {
+  border-radius: 10px;
+}
+
+.bl-shell[data-layout='store'] .bl-info-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .bl-shell[data-layout='store'] .bl-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.bl-shell[data-layout='store'] .bl-info-card {
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--bl-line);
+  box-shadow: 0 10px 28px rgba(3, 105, 161, 0.06);
+}
+
+.bl-shell[data-layout='store'] .bl-location-panel {
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 20px 50px rgba(3, 105, 161, 0.1);
+}
+
+.bl-shell[data-layout='store'] .bl-contact-shell {
+  border-radius: 20px;
+  border: 0;
+  background: linear-gradient(135deg, #fff, color-mix(in srgb, var(--bl-gold) 10%, #fff));
+  box-shadow: 0 20px 50px rgba(3, 105, 161, 0.1);
+}
+
+.bl-shell[data-layout='store'] .bl-footer {
+  background: #0b1220;
+  color: #e2e8f0;
+  border-top: 0;
+}
+
+.bl-shell[data-layout='store'] .bl-footer-brand strong,
+.bl-shell[data-layout='store'] .bl-footer-link,
+.bl-shell[data-layout='store'] .bl-footer-contact a,
+.bl-shell[data-layout='store'] .bl-footer-bottom,
+.bl-shell[data-layout='store'] .bl-footer-powered {
+  color: #e2e8f0;
+}
+
+.bl-shell[data-layout='store'] .bl-footer-brand span {
+  color: rgba(226, 232, 240, 0.65);
+}
+
+/* ——— OUTDOORS sections ——— */
+.bl-shell[data-layout='outdoors'] .bl-about-body {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-about-text {
+  font-family: var(--bl-display);
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  max-width: 34rem;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-about-aside {
+  border-radius: 22px 6px;
+  background: color-mix(in srgb, var(--bl-gold) 22%, #fff);
+  border: 1px solid color-mix(in srgb, var(--bl-forest) 18%, transparent);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-services-grid {
+  gap: 1.15rem;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-service-card {
+  border-radius: 24px 8px;
+  background:
+    linear-gradient(160deg, #fff, color-mix(in srgb, var(--bl-gold) 10%, #fff));
+  border: 1px solid color-mix(in srgb, var(--bl-forest) 14%, transparent);
+  padding: 1.6rem;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-service-icon {
+  border-radius: 16px 6px;
+  background: var(--bl-forest);
+  color: #fff;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-highlight-card {
+  border-radius: 8px 24px;
+  border: 1px solid color-mix(in srgb, var(--bl-forest) 16%, transparent);
+  background: #fff;
+  padding: 1.5rem;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-why {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 80% 20%, rgba(163, 230, 53, 0.2), transparent 55%),
+    linear-gradient(160deg, #1a2e05, #3f6212);
+  color: #fff;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-why .bl-section-head,
+.bl-shell[data-layout='outdoors'] .bl-why-grid {
+  width: min(100% - 2rem, var(--bl-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-why .bl-kicker {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-why .bl-section-title,
+.bl-shell[data-layout='outdoors'] .bl-why-card h3 {
+  color: #fff;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-why-card {
+  border-radius: 22px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-why-card p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-why-icon {
+  border-radius: 14px 4px;
+  background: var(--bl-gold);
+  color: #1a2e05;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-info-card {
+  border-radius: 18px 6px;
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--bl-forest) 14%, transparent);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-location-panel {
+  border-radius: 28px;
+  border: 0;
+  overflow: hidden;
+  box-shadow: 0 24px 55px rgba(63, 98, 18, 0.12);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-location-copy {
+  background: linear-gradient(145deg, #1a2e05, #3f6212);
+  color: #fff;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-location-copy .bl-kicker {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-location-copy .bl-section-title {
+  color: #fff;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-location-address {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-contact-shell {
+  border-radius: 28px;
+  border: 0;
+  background:
+    radial-gradient(ellipse 45% 50% at 0% 0%, rgba(163, 230, 53, 0.18), transparent 55%),
+    #fff;
+  box-shadow: 0 24px 55px rgba(63, 98, 18, 0.1);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-footer {
+  background: #1a2e05;
+  color: #eef6ef;
+  border-top: 0;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-footer-brand strong,
+.bl-shell[data-layout='outdoors'] .bl-footer-link,
+.bl-shell[data-layout='outdoors'] .bl-footer-contact a,
+.bl-shell[data-layout='outdoors'] .bl-footer-bottom,
+.bl-shell[data-layout='outdoors'] .bl-footer-powered {
+  color: #eef6ef;
+}
+
+.bl-shell[data-layout='outdoors'] .bl-footer-brand span {
+  color: rgba(238, 246, 239, 0.65);
+}
+
+/* ——— STUDIO sections ——— */
+.bl-shell[data-layout='studio'] .bl-section-head {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bl-line);
+  margin-bottom: 2.25rem;
+  max-width: none;
+}
+
+.bl-shell[data-layout='studio'] .bl-about-text {
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+  font-weight: 500;
+  max-width: 40rem;
+}
+
+.bl-shell[data-layout='studio'] .bl-about-aside {
+  border-radius: 14px;
+  border: 1px solid var(--bl-line);
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(15, 118, 110, 0.06);
+}
+
+.bl-shell[data-layout='studio'] .bl-services-grid {
+  gap: 1rem;
+}
+
+.bl-shell[data-layout='studio'] .bl-service-card {
+  border-radius: 16px;
+  border: 1px solid var(--bl-line);
+  border-bottom: 3px solid var(--bl-gold);
+  background: #fff;
+  padding: 1.5rem;
+}
+
+.bl-shell[data-layout='studio'] .bl-service-icon {
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bl-gold) 20%, #fff);
+  color: var(--bl-forest);
+}
+
+.bl-shell[data-layout='studio'] .bl-highlight-card {
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--bl-line);
+  box-shadow: 0 12px 32px rgba(15, 118, 110, 0.06);
+}
+
+.bl-shell[data-layout='studio'] .bl-why {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background: linear-gradient(145deg, #0b1f2a, #0f766e);
+  color: #fff;
+}
+
+.bl-shell[data-layout='studio'] .bl-why .bl-section-head,
+.bl-shell[data-layout='studio'] .bl-why-grid {
+  width: min(100% - 2rem, var(--bl-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bl-shell[data-layout='studio'] .bl-why .bl-section-head {
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+.bl-shell[data-layout='studio'] .bl-why .bl-kicker {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='studio'] .bl-why .bl-section-title,
+.bl-shell[data-layout='studio'] .bl-why-card h3 {
+  color: #fff;
+}
+
+.bl-shell[data-layout='studio'] .bl-why-card {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.bl-shell[data-layout='studio'] .bl-why-card p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.bl-shell[data-layout='studio'] .bl-why-icon {
+  border-radius: 10px;
+  background: var(--bl-gold);
+  color: #0b1f2a;
+}
+
+.bl-shell[data-layout='studio'] .bl-info-card {
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--bl-line);
+}
+
+.bl-shell[data-layout='studio'] .bl-location-panel {
+  border-radius: 20px;
+  border: 1px solid var(--bl-line);
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(15, 118, 110, 0.08);
+}
+
+.bl-shell[data-layout='studio'] .bl-contact-shell {
+  border-radius: 20px;
+  border: 1px solid var(--bl-line);
+  background: #fff;
+  box-shadow: 0 20px 48px rgba(15, 118, 110, 0.08);
+}
+
+.bl-shell[data-layout='studio'] .bl-footer {
+  background: #0b1f2a;
+  color: #eef2f6;
+  border-top: 0;
+}
+
+.bl-shell[data-layout='studio'] .bl-footer-brand strong,
+.bl-shell[data-layout='studio'] .bl-footer-link,
+.bl-shell[data-layout='studio'] .bl-footer-contact a,
+.bl-shell[data-layout='studio'] .bl-footer-bottom,
+.bl-shell[data-layout='studio'] .bl-footer-powered {
+  color: #eef2f6;
+}
+
+.bl-shell[data-layout='studio'] .bl-footer-brand span {
+  color: rgba(238, 242, 246, 0.65);
+}
+
+/* Dark mode: keep inverted full-bleed bands readable */
+html[data-theme='dark'] .bl-shell[data-layout='atelier'] .bl-service-card,
+html[data-theme='dark'] .bl-shell[data-layout='atelier'] .bl-highlight-card,
+html[data-theme='dark'] .bl-shell[data-layout='atelier'] .bl-info-card,
+html[data-theme='dark'] .bl-shell[data-layout='kitchen'] .bl-highlight-card,
+html[data-theme='dark'] .bl-shell[data-layout='workshop'] .bl-service-card,
+html[data-theme='dark'] .bl-shell[data-layout='workshop'] .bl-highlight-card,
+html[data-theme='dark'] .bl-shell[data-layout='workshop'] .bl-info-card,
+html[data-theme='dark'] .bl-shell[data-layout='workshop'] .bl-contact-shell,
+html[data-theme='dark'] .bl-shell[data-layout='wellness'] .bl-about-body,
+html[data-theme='dark'] .bl-shell[data-layout='wellness'] .bl-service-card,
+html[data-theme='dark'] .bl-shell[data-layout='wellness'] .bl-highlight-card,
+html[data-theme='dark'] .bl-shell[data-layout='wellness'] .bl-why-card,
+html[data-theme='dark'] .bl-shell[data-layout='wellness'] .bl-info-card,
+html[data-theme='dark'] .bl-shell[data-layout='wellness'] .bl-contact-shell,
+html[data-theme='dark'] .bl-shell[data-layout='arena'] .bl-highlight-card,
+html[data-theme='dark'] .bl-shell[data-layout='arena'] .bl-info-card,
+html[data-theme='dark'] .bl-shell[data-layout='arena'] .bl-contact-shell,
+html[data-theme='dark'] .bl-shell[data-layout='store'] .bl-why-card,
+html[data-theme='dark'] .bl-shell[data-layout='store'] .bl-info-card,
+html[data-theme='dark'] .bl-shell[data-layout='outdoors'] .bl-service-card,
+html[data-theme='dark'] .bl-shell[data-layout='outdoors'] .bl-highlight-card,
+html[data-theme='dark'] .bl-shell[data-layout='outdoors'] .bl-info-card,
+html[data-theme='dark'] .bl-shell[data-layout='outdoors'] .bl-contact-shell,
+html[data-theme='dark'] .bl-shell[data-layout='studio'] .bl-service-card,
+html[data-theme='dark'] .bl-shell[data-layout='studio'] .bl-highlight-card,
+html[data-theme='dark'] .bl-shell[data-layout='studio'] .bl-info-card,
+html[data-theme='dark'] .bl-shell[data-layout='studio'] .bl-contact-shell,
+html[data-theme='dark'] .bl-shell[data-layout='boutique'] .bl-highlight-card,
+html[data-theme='dark'] .bl-shell[data-layout='boutique'] .bl-info-card,
+html[data-theme='dark'] .bl-shell[data-layout='boutique'] .bl-contact-shell {
+  background: var(--bl-surface);
+}
+
+html[data-theme='dark'] .bl-shell[data-layout='atelier'] .bl-services,
+html[data-theme='dark'] .bl-shell[data-layout='boutique'] .bl-service-card {
+  background: transparent;
+}
+
+/* Industry micro accents */
+.bl-shell[data-industry='clothing_boutique'] .bl-hero-eyebrow,
+.bl-shell[data-industry='jewelry'] .bl-hero-eyebrow,
+.bl-shell[data-industry='florist'] .bl-hero-eyebrow {
+  letter-spacing: 0.2em;
+}
+
+.bl-shell[data-industry='barber'] .bl-hero-panel-glow,
+.bl-shell[data-industry='beauty'] .bl-hero-panel-glow {
+  background: radial-gradient(circle, rgba(196, 160, 106, 0.55), transparent 68%);
+}
+
+.bl-shell[data-industry='photography'] .bl-hero-panel {
+  border-radius: 4px;
+  aspect-ratio: auto;
+  max-width: none;
+}
+
+.bl-shell[data-industry='bakery'] .bl-hero-stage,
+.bl-shell[data-industry='cafe'] .bl-hero-stage {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(224, 164, 58, 0.5), transparent 40%),
+    linear-gradient(145deg, #3a1c0e 0%, #b45309 48%, #1a0e09 100%);
+}
+
+.bl-shell[data-industry='fitness'] .bl-hero-panel-glow {
+  background: radial-gradient(circle, rgba(255, 77, 0, 0.55), transparent 68%);
+}
+
+.bl-shell[data-industry='dental'] .bl-hero-panel,
+.bl-shell[data-industry='clinic'] .bl-hero-panel {
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+.bl-shell[data-industry='pet'] .bl-hero-stage {
+  background:
+    radial-gradient(ellipse 50% 45% at 75% 15%, rgba(251, 191, 36, 0.3), transparent 50%),
+    linear-gradient(155deg, #1a2e14 0%, #4d7c0f 48%, #1a2e05 100%);
+}
+
+.bl-shell[data-industry='electronics'] .bl-hero-stage {
+  background: linear-gradient(125deg, #0f172a 0%, #0369a1 42%, #0284c7 100%);
+}
+
+.bl-shell[data-industry='hotel'] .bl-hero-stage {
+  background: linear-gradient(160deg, #0c1a12 0%, #365314 45%, #1a2e05 100%);
+}
+
+.bl-shell[data-industry='hotel'] .bl-hero-panel {
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bl-hero-motif span,
+  .bl-hero-panel-glow,
+  .bl-hero-orb {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   PREMIUM POLISH — typography, ribbon, numbers, buttons
+   ========================================================= */
+
+.bl-hero-rule {
+  display: block;
+  width: 4.5rem;
+  height: 3px;
+  margin: 0 0 1.35rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--bl-gold), transparent);
+  animation: blRise 0.85s ease 0.08s both;
+}
+
+.bl-section-head {
+  position: relative;
+}
+
+.bl-section-index {
+  display: block;
+  margin: 0 0 0.65rem;
+  font-family: var(--bl-display);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: color-mix(in srgb, var(--bl-forest) 14%, transparent);
+  user-select: none;
+}
+
+.bl-location-copy .bl-section-index,
+.bl-contact-intro .bl-section-index {
+  margin-bottom: 0.5rem;
+}
+
+.bl-service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.bl-service-num {
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  font-family: var(--bl-display);
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: color-mix(in srgb, var(--bl-forest) 16%, transparent);
+  pointer-events: none;
+}
+
+/* Marquee ribbon of services under hero */
+.bl-ribbon {
+  width: 100%;
+  overflow: hidden;
+  border-block: 1px solid color-mix(in srgb, var(--bl-forest) 12%, transparent);
+  background: color-mix(in srgb, var(--bl-forest) 6%, var(--bl-paper));
+  color: var(--bl-ink);
+  margin-top: -0.25rem;
+}
+
+.bl-ribbon-track {
+  display: flex;
+  width: max-content;
+  gap: 2.5rem;
+  padding: 0.95rem 0;
+  animation: blRibbon 32s linear infinite;
+}
+
+.bl-ribbon-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+  font-family: var(--bl-display);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.bl-ribbon-item::after {
+  content: '✦';
+  color: var(--bl-gold);
+  font-size: 0.75rem;
+}
+
+@keyframes blRibbon {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Buttons — richer feel */
+.bl-shell .bl-btn-primary,
+.bl-shell .bl-btn-secondary,
+.bl-shell .bl-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.bl-shell .bl-btn-primary {
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--bl-forest) 28%, transparent);
+}
+
+.bl-shell .bl-btn-primary:hover,
+.bl-shell .bl-btn-primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--bl-forest) 36%, transparent);
+}
+
+.bl-shell .bl-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.bl-shell .bl-btn-secondary:hover,
+.bl-shell .bl-btn-secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.bl-shell .bl-hero .bl-btn-ghost {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #fff;
+}
+
+.bl-shell .bl-hero .bl-btn-ghost:hover,
+.bl-shell .bl-hero .bl-btn-ghost:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* Trust + nav polish */
+.bl-shell .bl-trust-track {
+  gap: 0.35rem 1rem;
+}
+
+.bl-shell .bl-trust-item i {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 12px;
+  font-size: 1.05rem;
+}
+
+.bl-shell .bl-nav-brand-text {
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
+}
+
+.bl-shell .bl-nav-link:hover,
+.bl-shell .bl-nav-link:focus-visible {
+  background: color-mix(in srgb, var(--bl-forest) 10%, transparent);
+  color: var(--bl-ink);
+}
+
+.bl-shell .bl-contact-quick-link {
+  padding: 0.7rem 0.95rem;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bl-forest) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--bl-forest) 12%, transparent);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.bl-shell .bl-contact-quick-link:hover,
+.bl-shell .bl-contact-quick-link:focus-visible {
+  transform: translateX(4px);
+  background: color-mix(in srgb, var(--bl-forest) 14%, transparent);
+  text-decoration: none;
+}
+
+.bl-shell .bl-contact-form-wrap .biz-contact-form {
+  border-radius: 20px;
+  padding: 1.35rem;
+}
+
+.bl-shell .bl-highlight-price {
+  font-family: var(--bl-display);
+}
+
+.bl-shell .bl-footer-brand strong {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+/* Layout-specific ribbon + index accents */
+.bl-shell[data-layout='atelier'] .bl-ribbon {
+  background: color-mix(in srgb, var(--bl-gold) 14%, var(--bl-paper));
+}
+
+.bl-shell[data-layout='atelier'] .bl-section-index {
+  font-style: italic;
+}
+
+.bl-shell[data-layout='boutique'] .bl-ribbon {
+  background: var(--bl-forest);
+  color: #f8f4ef;
+  border-color: transparent;
+}
+
+.bl-shell[data-layout='boutique'] .bl-ribbon-item::after {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='boutique'] .bl-section-index {
+  font-style: italic;
+  color: color-mix(in srgb, var(--bl-forest) 18%, transparent);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-ribbon {
+  background: #2a1108;
+  color: #f5ebe1;
+  border-color: transparent;
+}
+
+.bl-shell[data-layout='kitchen'] .bl-ribbon-item::after {
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='workshop'] .bl-ribbon {
+  background: #101418;
+  color: #eceff2;
+  border-color: transparent;
+}
+
+.bl-shell[data-layout='workshop'] .bl-ribbon-item {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.bl-shell[data-layout='workshop'] .bl-section-index {
+  font-weight: 800;
+  letter-spacing: -0.08em;
+}
+
+.bl-shell[data-layout='wellness'] .bl-ribbon {
+  background: color-mix(in srgb, var(--bl-gold) 18%, #fff);
+  border-color: transparent;
+}
+
+.bl-shell[data-layout='wellness'] .bl-section-index {
+  color: color-mix(in srgb, var(--bl-gold) 45%, transparent);
+}
+
+.bl-shell[data-layout='arena'] .bl-ribbon {
+  background: #000;
+  color: #f3f3f3;
+  border-color: transparent;
+}
+
+.bl-shell[data-layout='arena'] .bl-ribbon-item {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.bl-shell[data-layout='arena'] .bl-ribbon-item::after {
+  content: '⚡';
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='arena'] .bl-section-index {
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  color: color-mix(in srgb, var(--bl-gold) 28%, transparent);
+}
+
+.bl-shell[data-layout='arena'] .bl-services .bl-section-index,
+.bl-shell[data-layout='arena'] .bl-services .bl-service-num {
+  color: rgba(255, 255, 255, 0.18);
+}
+
+.bl-shell[data-layout='arena'] .bl-location-copy .bl-section-index {
+  color: rgba(255, 77, 0, 0.35);
+}
+
+.bl-shell[data-layout='store'] .bl-ribbon {
+  background: #0b1220;
+  color: #e2e8f0;
+  border-color: transparent;
+}
+
+.bl-shell[data-layout='store'] .bl-ribbon-item::after {
+  content: '◆';
+  color: var(--bl-gold);
+}
+
+.bl-shell[data-layout='outdoors'] .bl-ribbon {
+  background: #1a2e05;
+  color: #eef6ef;
+  border-color: transparent;
+}
+
+.bl-shell[data-layout='studio'] .bl-ribbon {
+  background: #0b1f2a;
+  color: #eef2f6;
+  border-color: transparent;
+}
+
+.bl-shell[data-layout='atelier'] .bl-why .bl-section-index,
+.bl-shell[data-layout='kitchen'] .bl-services .bl-section-index,
+.bl-shell[data-layout='workshop'] .bl-why .bl-section-index,
+.bl-shell[data-layout='store'] .bl-services .bl-section-index,
+.bl-shell[data-layout='outdoors'] .bl-why .bl-section-index,
+.bl-shell[data-layout='studio'] .bl-why .bl-section-index {
+  color: rgba(255, 255, 255, 0.16);
+}
+
+.bl-shell[data-layout='kitchen'] .bl-services .bl-service-num,
+.bl-shell[data-layout='store'] .bl-services .bl-service-num {
+  color: rgba(255, 255, 255, 0.18);
+}
+
+.bl-shell[data-layout='boutique'] .bl-location-copy .bl-section-index,
+.bl-shell[data-layout='workshop'] .bl-location-copy .bl-section-index,
+.bl-shell[data-layout='outdoors'] .bl-location-copy .bl-section-index {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.bl-shell[data-layout='atelier'] .bl-btn-primary {
+  background: linear-gradient(135deg, var(--bl-forest), var(--bl-forest-deep));
+}
+
+.bl-shell[data-layout='kitchen'] .bl-btn-primary {
+  background: linear-gradient(135deg, #c2410c, var(--bl-forest-deep));
+  border-color: transparent;
+}
+
+.bl-shell[data-layout='workshop'] .bl-btn-primary {
+  background: var(--bl-gold);
+  border-color: var(--bl-gold);
+  color: #101418;
+}
+
+.bl-shell[data-layout='workshop'] .bl-btn-primary:hover,
+.bl-shell[data-layout='workshop'] .bl-btn-primary:focus-visible {
+  background: #ffb703;
+  border-color: #ffb703;
+  color: #101418;
+}
+
+.bl-shell[data-layout='wellness'] .bl-btn-primary {
+  background: linear-gradient(135deg, var(--bl-forest), #0d9488);
+}
+
+.bl-shell[data-layout='store'] .bl-btn-primary {
+  background: linear-gradient(135deg, #0284c7, var(--bl-forest-deep));
+  border-color: transparent;
+}
+
+/* Hero panel depth */
+.bl-shell .bl-hero-panel::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bl-shell[data-layout='wellness'] .bl-hero-panel::before {
+  inset: 18px;
+}
+
+.bl-shell[data-layout='workshop'] .bl-hero-panel::before {
+  border-color: rgba(240, 162, 2, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bl-ribbon-track,
+  .bl-hero-rule {
+    animation: none !important;
+  }
+}
+
+/* ��� Visitor quick dock (call / message / map) ��� */
+.bl-shell--dock {
+  padding-bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+.bl-dock {
+  position: fixed;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  z-index: 45;
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.55rem;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--bl-forest, #1f6f50) 22%, var(--bf-line, #e5e7eb));
+  background: color-mix(in srgb, var(--bf-surface, #fff) 92%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 36px rgba(15, 20, 17, 0.16);
+  animation: pageFade 0.35s ease both;
+}
+
+.bl-dock-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.45rem 0.15rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--bf-muted, #6b7280);
+}
+
+.bl-dock-status i {
+  font-size: 0.55rem;
+}
+
+.bl-dock-status--open {
+  color: color-mix(in srgb, var(--bl-forest, #1f6f50) 85%, #111);
+}
+
+.bl-dock-status--open i {
+  color: #16a34a;
+}
+
+.bl-dock-status--closed i {
+  color: #b45309;
+}
+
+.bl-dock-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.bl-dock-actions:has(> :only-child) {
+  grid-template-columns: 1fr;
+}
+
+.bl-dock-actions:has(> :nth-child(2):last-child) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.bl-dock-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  min-height: 3.1rem;
+  padding: 0.45rem 0.35rem;
+  border: 0;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: var(--bf-ink, #111);
+  background: color-mix(in srgb, var(--bl-forest, #1f6f50) 9%, var(--bf-bg, #f8faf9));
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.bl-dock-btn i {
+  font-size: 1.05rem;
+  color: var(--bl-forest, #1f6f50);
+}
+
+.bl-dock-btn:hover,
+.bl-dock-btn:focus-visible {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--bl-forest, #1f6f50) 16%, var(--bf-bg, #f8faf9));
+}
+
+.bl-dock-btn--call {
+  background: color-mix(in srgb, var(--bl-forest, #1f6f50) 88%, #000);
+  color: #fff;
+}
+
+.bl-dock-btn--call i {
+  color: #fff;
+}
+
+.bl-dock-btn--call:hover,
+.bl-dock-btn--call:focus-visible {
+  background: color-mix(in srgb, var(--bl-forest, #1f6f50) 78%, #000);
+}
+
+.bl-open-badge--hours {
+  color: var(--bf-muted, #6b7280);
+}
+
+@media (min-width: 900px) {
+  .bl-shell--dock {
+    padding-bottom: 0;
+  }
+
+  .bl-dock {
+    left: auto;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: min(340px, calc(100vw - 2.5rem));
+  }
+}
